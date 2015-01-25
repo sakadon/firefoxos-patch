@@ -24,6 +24,7 @@ patch shared/resources/apn.json $PATCHDIR/apn.json.diff
 zip -u application.zip shared/resources/apn.json
 
 # Remount file systems and push to the device
+$ADB remount
 $ADB shell mount -o remount rw /system
 $ADB push application.zip $SETTINGS_APP_INSTALL_PATH/application.zip
 
